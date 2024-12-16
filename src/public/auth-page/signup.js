@@ -27,7 +27,7 @@ form.addEventListener("submit", async (event) => {
 	// Send data to backend
 	try {
 		const response = await fetch(
-			"https://sub-manager.netlify.app/.netlify/functions/api/v1/auth/register",
+			"https://sub-manager.netlify.app/.netlify/functions/app/api/v1/auth/register",
 			{
 				method: "POST",
 				headers: { "Content-Type": "application/json" },

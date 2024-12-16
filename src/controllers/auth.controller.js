@@ -28,7 +28,7 @@ const registerUser = async (req, res) => {
 			expiresIn: "5m",
 		});
 
-		const verificationLink = `https://sub-manager.netlify.app/.netlify/functions/api/v1/auth/verify-email?token=${encodeURIComponent(
+		const verificationLink = `https://sub-manager.netlify.app/.netlify/functions/app/api/v1/auth/verify-email?token=${encodeURIComponent(
 			token
 		)}`;
 
