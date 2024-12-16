@@ -4,10 +4,16 @@
   
 [build]
     functions = "netlify/functions"
-    publish = "src/public/landing-page"
+    publish = "src/public"
 
 [[redirects]]
     from = "/api/*"
     to = "/.netlify/functions/app"
     status = 200
+
+[[redirects]]
+    from = "/"
+    to = "/landing-page/index.html"
+    status = 200
+    force = true
   
