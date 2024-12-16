@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Login page</title>
+		<link rel="stylesheet" href="./login.css" />
+	</head>
+	<body>
+		<main class="main">
+			<section class="login-container">
+				<div class="btn">
+					<button onclick="closeBtn()" class="close-btn">
+						&times;
+					</button>
+				</div>
+				<h1>Log in</h1>
+				<form id="login-form" class="login-form">
+					<div class="login-group">
+						<input
+							class="login-input"
+							id="email"
+							type="email"
+							placeholder="Email"
+							required
+						/>
+						<input
+							class="login-input"
+							id="password"
+							type="password"
+							placeholder="Password"
+							required
+						/>
+						<button id="Login-btn" class="login-btn" type="submit">
+							Log in
+						</button>
+					</div>
+				</form>
+				<p class="helper-link">
+					Forgot password? <a href="../forgot-password/forgotPassword.html">Recover</a>
+				</p>
+				<p class="helper-link">
+					Don't have an account? <a href="./signup.html">Sign up</a>
+				</p>
+				<p id="responseMessage" class="response-message"></p>
+                <div id="loading-spinner" style="display: none;">
+                    <div class="spinner"></div>
+                </div>
+            </section>
+		</main>
+		<script src="./login.js"></script>
+	</body>
+</html>
