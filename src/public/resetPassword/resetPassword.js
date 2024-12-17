@@ -25,7 +25,7 @@ resetPasswordForm.addEventListener("submit", async (event) => {
 
 	try {
 		const response = await fetch(
-			`${window.location.origin}/api/v1/auth/reset-password`,
+			"/api/v1/auth/reset-password",
 			{
 				method: "POST",
 				headers: { "Content-Type": "application/json" },

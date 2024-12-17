@@ -15,7 +15,7 @@ loginForm.addEventListener("submit", async (event) => {
 
 	try {
 		const response = await fetch(
-			"https://sub-manager.netlify.app/.netlify/functions/app/api/v1/auth/login",
+			"/api/v1/auth/login",
 			{
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
