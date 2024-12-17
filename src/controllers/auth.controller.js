@@ -168,7 +168,7 @@ const forgotPassword = async (req, res) => {
 			expiresIn: "10m",
 		});
 
-        const resetLink = `${req.protocol}://${req.get("host")}/reset-password?token=${resetToken}`
+        const resetLink = `https://sub-manager.netlify.app/.netlify/functions/app/reset-password?token=${encodeURIComponent(resetToken)}`
 
         const emailTemplate = `
         <p>Hi ${user.fullName},</p>
