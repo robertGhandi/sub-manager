@@ -11,10 +11,10 @@ const { validateLoginUser } = require("../validators/login.validator");
 const express = require("express");
 const router = express.Router();
 
-router.post("/register", validateUser, registerUser);
-router.post("/login", validateLoginUser, loginUser);
-router.get("/verify-email", verifyEmail);
-router.post("/forgot-password", forgotPassword);
-router.post("/reset-password", resetPassword);
+router.post("/api/v1/auth/register", validateUser, registerUser);
+router.post("/api/v1/auth/login", validateLoginUser, loginUser);
+router.get("/api/v1/auth/verify-email", verifyEmail);
+router.post("/api/v1/auth/forgot-password", forgotPassword);
+router.post("/api/v1/auth/reset-password", resetPassword);
 
 module.exports = router;

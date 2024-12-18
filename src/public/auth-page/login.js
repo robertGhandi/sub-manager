@@ -15,7 +15,7 @@ loginForm.addEventListener("submit", async (event) => {
 
 	try {
 		const response = await fetch(
-			"/api/v1/auth/login",
+			"https://sub-manager.netlify.app/.netlify/functions/app/api/v1/auth/login",
 			{
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
@@ -42,7 +42,7 @@ loginForm.addEventListener("submit", async (event) => {
 			
 		}
 	} catch (error) {
-		console.error("Error:", error);
+		//console.error("Error:", error);
         responseMessage.textContent = "Something went wrong. Please try again."
 
         setTimeout(() => {

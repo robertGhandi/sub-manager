@@ -18,7 +18,7 @@ form.addEventListener("submit", async (event) => {
 
 		setTimeout(() => {
 			feedback.textContent = "";
-		}, 4000);
+		}, 5000);
 		return;
 	}
 
@@ -27,7 +27,7 @@ form.addEventListener("submit", async (event) => {
 	// Send data to backend
 	try {
 		const response = await fetch(
-			"/api/v1/auth/register",
+			"https://sub-manager.netlify.app/.netlify/functions/app/api/v1/auth/register",
 			{
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
