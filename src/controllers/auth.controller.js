@@ -28,7 +28,7 @@ const registerUser = async (req, res) => {
 			expiresIn: "5m",
 		});
 
-		const verificationLink = `https://sub-manager.netlify.app/.netlify/functions/app/api/v1/auth/verify-email?token=${encodeURIComponent(
+		const verificationLink = `https://sub-manager.netlify.app/api/v1/auth/verify-email?token=${encodeURIComponent(
 			token
 		)}`;
 
@@ -168,7 +168,7 @@ const forgotPassword = async (req, res) => {
 			expiresIn: "10m",
 		});
 
-        const resetLink = `https://sub-manager.netlify.app/.netlify/functions/app/reset-password?token=${encodeURIComponent(resetToken)}`
+        const resetLink = `https://sub-manager.netlify.app/api/v1/auth/reset-password?token=${encodeURIComponent(resetToken)}`
 
         const emailTemplate = `
         <p>Hi ${user.fullName},</p>

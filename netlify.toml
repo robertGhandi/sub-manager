@@ -13,7 +13,7 @@
     force = true
 
 [[redirects]]
-    from = "/*"
-    to = "https://sub-manager.netlify.app/.netlify/functions/app"
+    from = "/api/*"
+    to = "/.netlify/functions/app/:splat"
     status = 200
   
