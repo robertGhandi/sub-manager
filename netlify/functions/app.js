@@ -21,7 +21,7 @@ exports.handler = async (event, context) => {
     if (!handler) {
         handler = serverlessExpress({ app });
     }
-
+    console.log("Incoming event:", JSON.stringify(event, null, 2));
     // Handle the request
     return handler(event, context);
 };
