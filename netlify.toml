@@ -3,14 +3,17 @@
     node_bundler = "esbuild"
   
 [build]
-    functions = "netlify/functions"
+    functions = "./netlify/functions"
     publish = "src/public"
-
-
 
 [[redirects]]
     from = "/"
     to = "/landing-page/index.html"
     status = 200
     force = true
+
+[[redirects]]
+    from = "/*"
+    to = "/.netlify/functions/app"
+    status = 200
   

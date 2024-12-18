@@ -9,7 +9,7 @@ const path = require("path");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-app.use("https://sub-manager.netlify.app/.netlify/functions/app", authRoutes);
+app.use("/api/v1/auth", authRoutes);
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
