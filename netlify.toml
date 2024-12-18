@@ -14,6 +14,6 @@
 
 [[redirects]]
     from = "/*"
-    to = "/.netlify/functions/app"
+    to = "https://sub-manager.netlify.app/.netlify/functions/app"
     status = 200
   
