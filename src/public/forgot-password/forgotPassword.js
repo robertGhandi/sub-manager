@@ -12,7 +12,7 @@ resetPasswordForm.addEventListener("submit", async (event) => {
 
 	try {
 		const response = await fetch(
-			`${window.location.origin}/api/v1/auth/forgot-password`,
+			"https://sub-manager.netlify.app/api/v1/auth/forgot-password",
 			{
 				method: "POST",
 				headers: { "Content-Type": "application/json" },

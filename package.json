@@ -10,6 +10,8 @@
 	"license": "ISC",
 	"description": "",
 	"dependencies": {
+		"@netlify/functions": "^2.8.2",
+		"@vendia/serverless-express": "^4.12.6",
 		"bcrypt": "^5.1.1",
 		"cors": "^2.8.5",
 		"dotenv": "^16.4.7",
@@ -18,8 +20,7 @@
 		"jsonwebtoken": "^9.0.2",
 		"mongoose": "^8.8.3",
 		"nodemailer": "^6.9.16",
-		"@netlify/functions": "^2.8.2",
-		"@vendia/serverless-express": "^4.12.6"
+		"subgenius": "file:"
 	},
 	"devDependencies": {
 		"@types/bcrypt": "^5.0.2",

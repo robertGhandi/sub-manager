@@ -1,6 +1,7 @@
 // src/database.js
-require("dotenv").config();
-const mongoose = require("mongoose");
+import { config } from "dotenv";
+config();
+import { connect } from "mongoose";
 
 let isConnected = false;
 
@@ -12,7 +13,7 @@ const connectToDatabase = async () => {
 
     console.log("=> Connecting to database...");
     try {
-        const db = await mongoose.connect(process.env.MONGODB_URL) 
+        const db = await connect(process.env.MONGODB_URL) 
         isConnected = db.connections.readyState === 1;
         console.log("=> Database connected");
     } catch (error) {
@@ -21,4 +22,4 @@ const connectToDatabase = async () => {
     }
 };
 
-module.exports = connectToDatabase;
+export default connectToDatabase;

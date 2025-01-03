@@ -1,5 +1,6 @@
-require("dotenv").config();
-const nodemailer = require("nodemailer");
+import { config } from "dotenv"
+config()
+import { createTransport } from "nodemailer";
 
 const sendEmail = async (email, subject, html) => {
 	try {
@@ -11,7 +12,7 @@ const sendEmail = async (email, subject, html) => {
 			
 		}
 
-		const transporter = nodemailer.createTransport({
+		const transporter = createTransport({
 			service: process.env.SERVICE,
 			port: 465,
 			secure: true,
@@ -39,4 +40,4 @@ const sendEmail = async (email, subject, html) => {
 	}
 };
 
-module.exports = sendEmail;
+export default sendEmail;

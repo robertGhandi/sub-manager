@@ -1,29 +1,34 @@
-require("dotenv").config();
-const authRoutes = require("./routes/auth.routes");
-const express = require("express");
+import { config } from "dotenv";
+config();
+import authRoutes from "./routes/auth.routes";
+import express, { json, urlencoded } from "express";
 const app = express();
-const cors = require("cors");
+import cors from "cors";
 
-const path = require("path");
+import { join } from "path";
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+app.use(json());
+app.use(urlencoded({ extended: true }));
 app.use(cors());
+
+app.use(express.static(join(__dirname, "public")));
 app.use("/api/v1/auth", authRoutes);
-app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
-	res.sendFile(path.join(__dirname, "public", "landing-page", "index.html"));
+	res.sendFile(join(__dirname, "public", "landing-page", "index.html"));
 });
 
 app.get("/dashboard", (req, res) => {
-	res.sendFile(path.join(__dirname, "public", "dashboard", "dashboard.html"));
+	res.sendFile(join(__dirname, "public", "dashboard", "dashboard.html"));
 });
 
 app.get("/reset-password", (req, res) => {
 	res.sendFile(
-		path.join(__dirname, "public", "resetPassword", "resetPassword.html")
+		join(__dirname, "public", "resetPassword", "resetPassword.html")
 	);
 });
 
-module.exports = app;
+export default app;

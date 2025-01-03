@@ -1,7 +1,7 @@
-const jwt = require("jsonwebtoken");
-const User = require("../models/user.model");
-const bcrypt = require("bcrypt");
-const sendEmail = require("../utils/email.js");
+import jwt from "jsonwebtoken";
+import User from "../models/user.model.js";
+import bcrypt from "bcrypt";
+import sendEmail from "../utils/email.js";
 
 const registerUser = async (req, res) => {
 	try {
@@ -236,4 +236,4 @@ const resetPassword = async (req, res) => {
 }
 
 
-module.exports = { registerUser, loginUser, verifyEmail, forgotPassword, resetPassword };
+export { registerUser, loginUser, verifyEmail, forgotPassword, resetPassword };

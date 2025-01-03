@@ -1,11 +1,11 @@
 // netlify/functions/app.js
-const serverlessExpress = require("@vendia/serverless-express");
-const connectToDatabase = require("../../src/database");
-const app = require("../../src/app");
+import serverlessExpress from "@vendia/serverless-express";
+import connectToDatabase from "../../src/database";
+import app from "../../src/app";
 
 let handler;
 
-exports.handler = async (event, context) => {
+const _handler = async (event, context) => {
     // Establish database connection
     try {
         await connectToDatabase();
@@ -25,3 +25,4 @@ exports.handler = async (event, context) => {
     // Handle the request
     return handler(event, context);
 };
+export { _handler as handler };

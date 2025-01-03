@@ -1,10 +1,9 @@
-const joi = require("joi");
+import { object, string } from "joi";
 
-const registerUserSchema = joi
-	.object({
-		fullName: joi.string().required().trim(),
-		email: joi.string().email().required(),
-		password: joi.string().required().min(8),
+const registerUserSchema = object({
+		fullName: string().required().trim(),
+		email: string().email().required(),
+		password: string().required().min(8),
 	})
 	.options({ abortEarly: false });
 
@@ -31,6 +30,4 @@ const validator = (validationSchema) => (req, res, next) => {
 	}
 };
 
-module.exports = {
-	validateUser: validator(registerUserSchema),
-};
+export const validateUser = validator(registerUserSchema);
