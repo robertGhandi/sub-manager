@@ -1,9 +1,9 @@
-import { object, string } from "joi";
+import Joi from "joi";
 
 const loginUserSchema = object({
     
-    email: string().email().required(),
-    password: string().required().min(8),
+    email: Joi.string().email().required(),
+    password: Joi.string().required().min(8),
     
 }).options({ abortEarly: false })
 
@@ -15,7 +15,7 @@ const validator = (validationSchema) => (req, res, next) => {
 			return res.status(400).json({
 				status: "error",
 				message: "Validation error",
-				data: result.error,
+				data: result.error.details,
 			});
 		}
 
@@ -26,7 +26,7 @@ const validator = (validationSchema) => (req, res, next) => {
 		res.status(400).json({
 			status: "error",
 			message: "Validation error",
-			data: error,
+			data: error.message,
 		});
 	}
 };

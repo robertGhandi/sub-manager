@@ -1,9 +1,9 @@
-import { object, string } from "joi";
+import Joi from "joi";
 
 const registerUserSchema = object({
-		fullName: string().required().trim(),
-		email: string().email().required(),
-		password: string().required().min(8),
+		fullName: Joi.string().required().trim(),
+		email: Joi.string().email().required(),
+		password: Joi.string().required().min(8),
 	})
 	.options({ abortEarly: false });
 
